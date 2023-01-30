@@ -96,7 +96,7 @@ async function clearCart() {
 async function createCheckout(cart) {
     return new Promise((resolve, reject) => {
         fetch(`${checkoutApiUrl}/checkout/${shopShopifyDomain}`, {
-            body: cart,
+            body: JSON.stringify(cart),
             method: "post",
             headers: {
                 'Content-type': 'application/json'
